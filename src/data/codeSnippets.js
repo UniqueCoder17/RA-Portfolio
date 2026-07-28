@@ -1,44 +1,56 @@
 const codeSnippets = [
-`const developer = {
-  name: "Raihan Alam Raihan",
-  role: "Full Stack Developer",
-  stack: ["React", "Node.js", "MongoDB"]
-};`,
+`Component-Based Architecture:
+React breaks down the UI into small,
+independent, and reusable pieces called components
+(e.g., Header, Button, Navbar)
+`,
 
-`function buildAwesomeUI() {
-  return "Modern Web Experience";
+
+`Virtual DOM (Document Object Model):
+Instead of updating the actual browser
+DOM directly (which is slow),
+React keeps a lightweight representation
+in memory called the Virtual DOM.`,
+
+`JSX (JavaScript XML):
+React allows you to write
+HTML-like syntax directly inside JavaScript.`,
+
+`Welcome to My Portfolio
+I am a Full Stack Web Developer
+I build modern,
+fast,
+responsive and interactive
+web applications using
+React, Node.js, MongoDB
+and modern frontend technologies.`,
+
+`One-Way Data Binding:
+Data in React flows
+in a single direction—from
+parent components to
+child components via props.`,
+
+`const developer={
+ name:"Raihan Alam",
+ role:"Full Stack Developer"
 }`,
 
-`class Portfolio {
-  constructor() {
-    this.framework = "React";
-    this.database = "MongoDB";
-  }
-}`,
+`Hooks & State Management:
+React uses Hooks
+(like useState, useEffect) to manage
+internal component data and handle
+lifecycle events smoothly without
+needing complex class components.`,
 
-`SELECT * FROM projects
-WHERE featured = true
-ORDER BY created_at DESC;`,
+`<Canvas>
+ <Laptop/>
+ <AnimatedRing/>
+</Canvas>`,
 
-`export default function Hero() {
-  return <h1>Hello World</h1>;
-}`,
-
-`body {
-  background: #050816;
-  color: white;
-}`,
-
-`{
-  "name": "portfolio",
-  "framework": "React",
-  "animation": "Three.js"
-}`,
-
-`services:
-  frontend: React
-  backend: Express
-  database: MongoDB`,
+`Reusability:
+Write a component once and reuse
+it across multiple pages or projects.`
 ];
 
 export default codeSnippets;

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-
+import React from "react";
 const Hero = () => {
   return (
-    <section className="relative z-10 min-h-screen flex items-center">
+    <section className="relative z-10 min-h-screen flex items-center justify-center">
       <div className="max-w-7xl mx-auto w-full px-8 md:px-16">
 
         <motion.div
@@ -33,13 +33,13 @@ const Hero = () => {
             frontend technologies.
           </p>
 
-          <div className="flex gap-5 mt-10">
+          <div className="flex gap-10 mt-10">
 
-            <button className="px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition font-semibold text-black">
+            <button className="btn btn-outline btn-primary">
               Hire Me
             </button>
 
-            <button className="px-8 py-8 rounded-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-black transition">
+           <button className="btn btn-dash btn-accent">
               Download CV
             </button>
 

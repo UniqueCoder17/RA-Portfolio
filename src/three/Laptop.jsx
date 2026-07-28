@@ -5,25 +5,39 @@ const Laptop = () => {
     const photo = useTexture("/raihan.jpg");
     return (
         <group
-            rotation={[-0.22, 0.45, 0]}
-            position={[2.7, -0.85, 0]}
-            scale={0.65}
+            position={[2.55, -0.88, 0]}
+            rotation={[-0.03, -0.05, 0]}
+            scale={0.58}
         >
-            {/* Base */}
+            {/* ================= BASE ================= */}
+
             <RoundedBox
-                args={[3.4, 0.12, 2.25]}
-                radius={0.05}
-                smoothness={8}
+                args={[3.4, 0.12, 2.3]}
+                radius={0.06}
+                smoothness={10}
             >
                 <meshStandardMaterial
                     color="#161b22"
                     metalness={1}
-                    roughness={0.18}
+                    roughness={0.15}
                 />
             </RoundedBox>
 
-            {/* Keyboard */}
-            <group position={[0, 0.055, -0.18]}>
+            {/* Bottom Plate */}
+
+            <mesh position={[0, -0.075, 0.08]}>
+                <boxGeometry args={[3.3, 0.025, 2.15]} />
+                <meshStandardMaterial
+                    color="#0d1117"
+                    metalness={1}
+                    roughness={0.25}
+                />
+            </mesh>
+
+            {/* ================= KEYBOARD ================= */}
+
+            <group position={[0, 0.055, -0.02]}>
+
                 {Array.from({ length: 6 }).map((_, row) =>
                     Array.from({ length: 14 }).map((_, col) => (
                         <RoundedBox
@@ -34,7 +48,7 @@ const Laptop = () => {
                             position={[
                                 -1.05 + col * 0.16,
                                 0,
-                                -0.62 + row * 0.18,
+                                -0.68 + row * 0.18,
                             ]}
                         >
                             <meshStandardMaterial
@@ -44,12 +58,14 @@ const Laptop = () => {
                             />
                         </RoundedBox>
                     ))
-
                 )}
+
+                {/* Space Bar */}
+
                 <RoundedBox
                     args={[0.95, 0.025, 0.14]}
                     radius={0.01}
-                    position={[0, 0.055, 0.47]}
+                    position={[0, 0, 0.58]}
                 >
                     <meshStandardMaterial
                         color="#20242c"
@@ -59,120 +75,139 @@ const Laptop = () => {
                 </RoundedBox>
 
                 {/* Left Shift */}
+
                 <RoundedBox
-                    args={[0.38, 0.025, 0.14]}
+                    args={[0.42, 0.025, 0.14]}
                     radius={0.01}
-                    position={[-0.92, 0.055, 0.47]}
+                    position={[-0.92, 0, 0.58]}
                 >
-                    <meshStandardMaterial
-                        color="#20242c"
-                        metalness={0.9}
-                        roughness={0.3}
-                    />
+                    <meshStandardMaterial color="#20242c" />
                 </RoundedBox>
 
                 {/* Right Shift */}
+
                 <RoundedBox
-                    args={[0.52, 0.025, 0.14]}
+                    args={[0.55, 0.025, 0.14]}
                     radius={0.01}
-                    position={[0.75, 0.055, 0.47]}
+                    position={[0.78, 0, 0.58]}
                 >
-                    <meshStandardMaterial
-                        color="#20242c"
-                        metalness={0.9}
-                        roughness={0.3}
-                    />
+                    <meshStandardMaterial color="#20242c" />
+                </RoundedBox>
+
+                {/* Enter */}
+
+                <RoundedBox
+                    args={[0.18, 0.025, 0.32]}
+                    radius={0.01}
+                    position={[1.02, 0, 0.18]}
+                >
+                    <meshStandardMaterial color="#20242c" />
                 </RoundedBox>
 
             </group>
 
-            {/* Trackpad */}
-            <mesh position={[0, 0.028, 0.78]}>
-                <boxGeometry args={[1.2, 0.01, 0.75]} />
+            {/* ================= TRACKPAD ================= */}
+
+            <RoundedBox
+                args={[1.15, 0.012, 0.72]}
+                radius={0.02}
+                smoothness={6}
+                position={[0, 0.03, 0.72]}
+            >
                 <meshStandardMaterial
                     color="#4b5563"
                     metalness={1}
-                    roughness={0.15}
+                    roughness={0.12}
                 />
-            </mesh>
+            </RoundedBox>
 
-            {/* Bottom Plate */}
-            <mesh position={[0, -0.07, 0]}>
-                <boxGeometry args={[3.25, 0.02, 2.05]} />
-                <meshStandardMaterial
-                    color="#0d1117"
-                    metalness={1}
-                    roughness={0.25}
-                />
-            </mesh>
+            {/* ================= SCREEN ================= */}
 
-            {/* Screen Frame */}
-            <group position={[0, 1.1, -0.98]} rotation={[-0.5, 0, 0]}>
-
+            <group
+                position={[0, 1.18, -1.08]}
+                rotation={[-0.58, 0, 0]}
+            >
                 {/* Outer Frame */}
                 <RoundedBox
-                    args={[3, 1.9, 0.08]}
+                    args={[3.02, 1.92, 0.08]}
                     radius={0.05}
-                    smoothness={8}
+                    smoothness={10}
                 >
                     <meshStandardMaterial
                         color="#111827"
                         metalness={1}
-                        roughness={0.15}
+                        roughness={0.12}
                     />
                 </RoundedBox>
 
+                {/* Inner Black Bezel */}
+                <mesh position={[0, 0, 0.041]}>
+                    <planeGeometry args={[2.84, 1.74]} />
+                    <meshBasicMaterial color="#050816" />
+                </mesh>
+
                 {/* Screen */}
                 <mesh position={[0, 0, 0.045]}>
-                    <planeGeometry args={[2.72, 1.62]} />
+                    <planeGeometry args={[2.74, 1.64]} />
                     <meshBasicMaterial
                         map={photo}
                         toneMapped={false}
                     />
                 </mesh>
 
+                {/* Camera */}
+                <mesh position={[0, 0.88, 0.05]}>
+                    <sphereGeometry args={[0.018, 20, 20]} />
+                    <meshBasicMaterial color="#000" />
+                </mesh>
+
+                {/* Camera Light */}
+                <mesh position={[0.06, 0.88, 0.05]}>
+                    <sphereGeometry args={[0.008, 16, 16]} />
+                    <meshBasicMaterial color="#22d3ee" />
+                </mesh>
+
+                {/* Name */}
                 <Text
-                    position={[0.4, 0.45, 0.05]}
+                    position={[0.38, 0.48, 0.055]}
                     fontSize={0.11}
                     color="#38bdf8"
                     anchorX="left"
+                    anchorY="middle"
                 >
                     RAIHAN ALAM
                 </Text>
 
+                {/* Role */}
                 <Text
-                    position={[0.4, 0.25, 0.05]}
+                    position={[0.38, 0.26, 0.055]}
                     fontSize={0.06}
                     color="white"
                     anchorX="left"
+                    anchorY="middle"
                 >
                     Full Stack Developer
                 </Text>
 
+                {/* Status */}
                 <Text
-                    position={[0.4, 0.05, 0.05]}
-                    fontSize={0.05}
+                    position={[0.38, 0.05, 0.055]}
+                    fontSize={0.055}
                     color="#22c55e"
                     anchorX="left"
+                    anchorY="middle"
                 >
                     ● Available For Work
                 </Text>
 
-                {/* Camera */}
-                <mesh position={[0, 0.87, 0.05]}>
-                    <sphereGeometry args={[0.02, 16, 16]} />
-                    <meshBasicMaterial color="#000" />
-                </mesh>
-
+                {/* Small Glow */}
+                <pointLight
+                    position={[0, 0, 0.4]}
+                    color="#38bdf8"
+                    intensity={8}
+                    distance={4}
+                />
             </group>
-
-            {/* Screen Glow */}
-            <pointLight
-                position={[0, 1.1, -0.5]}
-                color="#38bdf8"
-                intensity={20}
-            />
-
         </group>
     );
 };

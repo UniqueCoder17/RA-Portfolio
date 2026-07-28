@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float } from "@react-three/drei";
 import Laptop from "./Laptop";
+import AnimatedRing from "./AnimatedRing";
 
 const Scene = () => {
     return (
@@ -11,7 +12,7 @@ const Scene = () => {
                     fov: 35,
                 }}
             >
-                {/* Ambient Light */}
+                {/* Lights */}
                 <ambientLight intensity={0.7} />
 
                 <directionalLight
@@ -31,21 +32,22 @@ const Scene = () => {
                     intensity={20}
                 />
 
-                <Float
-                    speed={2}
-                    rotationIntensity={0.5}
-                    floatIntensity={1.2}
-                >
-                    <Laptop />
-                </Float>
+                {/* Ring (Fixed Position) */}
+                <AnimatedRing
+                    position={[2.55, 0.15, -2.1]}
+                    scale={1.2}
+                />
 
+                <Laptop />
+
+                {/* Controls */}
                 <OrbitControls
                     enableZoom={false}
-                    autoRotate
-                    autoRotateSpeed={1}
+                    enablePan={false}
+                    autoRotate={false}
                 />
             </Canvas>
-        </div>
+        </div >
     );
 };
 
