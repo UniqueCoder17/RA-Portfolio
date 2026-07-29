@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import Skills from "./Skills";
+
 
 const links = [
   { name: "Home", href: "#home" },

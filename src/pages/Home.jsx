@@ -1,21 +1,34 @@
-import LiveCodingBackground from "../component/LiveCodingBackground";
 import Hero from "../component/Hero";
-import Scene from "../three/Scene";
-import Navbar from "../component/Navbar";`
-import Skills from "../component/Skills";`
+import Banner from "../component/Banner";
+import Skills from "../component/Skills";
+import Contact from "../component/Contact";
+import LiveCodingBackground from "../component/LiveCodingBackground";
+import Navbar from "../component/Navbar";
 
 const Home = () => {
   return (
-    <main className="relative min-h-screen bg-[#050816] overflow-hidden">
-      {/* Background Coding */}
+    <main className="relative bg-[#050816] overflow-hidden">
+
       <LiveCodingBackground />
 
-      {/* 3D Laptop + Ring */}
-      <Scene />
-
-      {/* UI */}
       <Navbar />
-      <Hero />
+
+      <section id="home">
+        <Hero />
+      </section>
+
+      <section id="about">
+        <Banner />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
     </main>
   );
 };

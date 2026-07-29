@@ -20,10 +20,6 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        index: true,
-        element: <Skills />,
-      },
     ],
   },
 ]);

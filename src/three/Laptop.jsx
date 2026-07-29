@@ -5,9 +5,9 @@ const Laptop = () => {
     const photo = useTexture("/raihan.jpg");
     return (
         <group
-            position={[2.55, -0.88, 0]}
-            rotation={[-0.03, -0.05, 0]}
-            scale={0.58}
+            position={[0.3, -0.45, 0]}
+            rotation={[-0.02, -0.02, 0]}
+            scale={0.68}
         >
             {/* ================= BASE ================= */}
 
@@ -112,7 +112,7 @@ const Laptop = () => {
                 args={[1.15, 0.012, 0.72]}
                 radius={0.02}
                 smoothness={6}
-                position={[0, 0.03, 0.72]}
+                position={[0, 0.03, 0.78]}
             >
                 <meshStandardMaterial
                     color="#4b5563"
@@ -124,8 +124,8 @@ const Laptop = () => {
             {/* ================= SCREEN ================= */}
 
             <group
-                position={[0, 1.18, -1.08]}
-                rotation={[-0.58, 0, 0]}
+                position={[0, 1.15, -1.02]}
+                rotation={[-0.45, 0, 0]}
             >
                 {/* Outer Frame */}
                 <RoundedBox

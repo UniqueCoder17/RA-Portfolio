@@ -1,53 +1,54 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Float } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import Laptop from "./Laptop";
 import AnimatedRing from "./AnimatedRing";
 
 const Scene = () => {
     return (
-        <div className="absolute inset-0 z-0">
-            <Canvas
-                camera={{
-                    position: [0, 1.3, 7],
-                    fov: 35,
-                }}
-            >
-                {/* Lights */}
-                <ambientLight intensity={0.7} />
+        <Canvas
+            camera={{
+                position: [0, 0.8, 7],
+                fov: 38,
+            }}
+            style={{
+                width: "100%",
+                height: "100%",
+            }}
+        >
+            {/* Lights */}
+            <ambientLight intensity={1} />
 
-                <directionalLight
-                    position={[5, 5, 5]}
-                    intensity={2}
-                />
+            <directionalLight
+                position={[5, 5, 5]}
+                intensity={2}
+            />
 
-                <pointLight
-                    position={[3, 3, 3]}
-                    color="#38bdf8"
-                    intensity={35}
-                />
+            <pointLight
+                position={[3, 3, 3]}
+                color="#38bdf8"
+                intensity={25}
+            />
 
-                <pointLight
-                    position={[-3, 2, 1]}
-                    color="#7c3aed"
-                    intensity={20}
-                />
+            <pointLight
+                position={[-3, 2, 1]}
+                color="#7c3aed"
+                intensity={15}
+            />
 
-                {/* Ring (Fixed Position) */}
-                <AnimatedRing
-                    position={[2.55, 0.15, -2.1]}
-                    scale={1.2}
-                />
+            {/* Ring */}
+           <AnimatedRing
+    position={[0.45, 0.15, -2]}
+    scale={1.1}
+/>
 
-                <Laptop />
+            <Laptop />
 
-                {/* Controls */}
-                <OrbitControls
-                    enableZoom={false}
-                    enablePan={false}
-                    autoRotate={false}
-                />
-            </Canvas>
-        </div >
+            <OrbitControls
+                enableZoom={false}
+                enablePan={false}
+                enableRotate={false}
+            />
+        </Canvas>
     );
 };
 
