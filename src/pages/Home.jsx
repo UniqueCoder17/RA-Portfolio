@@ -1,33 +1,34 @@
+import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
 import Banner from "../component/Banner";
 import Skills from "../component/Skills";
+import Projects from "../component/Projects";
 import Contact from "../component/Contact";
 import LiveCodingBackground from "../component/LiveCodingBackground";
-import Navbar from "../component/Navbar";
 
 const Home = () => {
   return (
-    <main className="relative bg-[#050816] overflow-hidden">
+    <main className="bg-[#050816] text-white">
 
       <LiveCodingBackground />
 
       <Navbar />
 
-      <section id="home">
-        <Hero />
-      </section>
+      <Hero />
 
-      <section id="about">
-        <Banner />
-      </section>
+      <Banner />
+<br />
+<br />
+<br />
+<br />
+      <Skills />
+<br />
+<br />
+<br />
+<br />
+      <Projects />
 
-      <section id="skills">
-        <Skills />
-      </section>
-
-      <section id="contact">
-        <Contact />
-      </section>
+      <Contact />
 
     </main>
   );
