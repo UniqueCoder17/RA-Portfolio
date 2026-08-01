@@ -19,7 +19,7 @@ const Projects = () => {
             MY <span className="text-cyan-400">PROJECTS</span>
           </h2>
 
-          <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
+          <p className="text-gray-400 text-center mt-5 max-w-2xl">
             Here are some of my favorite projects built using React,
             Node.js, MongoDB, Firebase and Three.js.
           </p>
