@@ -43,9 +43,9 @@ const Hero = () => {
                 Hire Me
               </button>
 
-              <button className="btn btn-outline btn-info">
+             <a href="https://i.ibb.co.com/SwgjYHY9/Raihan-CV-1.png" className="btn btn-outline btn-info" download>
                 Download CV
-              </button>
+              </a>
             </div>
           </motion.div>
 

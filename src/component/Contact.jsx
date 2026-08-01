@@ -109,7 +109,7 @@ const Contact = () => {
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/in/raihan-alam-raihan-b63293362/"
                                 className="w-14 h-14 rounded-full bg-cyan-500/10
                 border border-cyan-500/30
                 flex items-center justify-center
